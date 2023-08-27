@@ -27,13 +27,13 @@ class ProjectInput {
     this.attach();
   }
 
-  private sumbitHandler(event: Event) {
+  private submitHandler(event: Event) {
     event.preventDefault();
     console.log(this.titleInputElement.value);
   }
 
   private configure() {
-    this.element.addEventListener('submit', this.sumbitHandler.bind(this))
+    this.element.addEventListener('submit', this.submitHandler.bind(this))
   }
 
   private attach() {
