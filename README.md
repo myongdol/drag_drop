@@ -5,3 +5,4 @@
 [사용자가 입력한 정보 가져오기](https://blog.naver.com/ares132/223196109596)  
 [재사용 가능한 검증 기능 생성하기](https://blog.naver.com/ares132/223196175747)  
 
+[타입에 따라 그에 맞는 목록 렌더링하기](https://blog.naver.com/ares132/223197177521)  
