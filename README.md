@@ -7,3 +7,4 @@
 
 [타입에 따라 그에 맞는 목록 렌더링하기](https://blog.naver.com/ares132/223197177521)  
 [싱글톤 패턴으로 어플리케이션 상태관리](https://blog.naver.com/ares132/223197214468)  
+[클래스와 사용자 정의타입 추가](https://blog.naver.com/ares132/223199113910)  
