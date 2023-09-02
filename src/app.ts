@@ -1,3 +1,17 @@
+// 드래그 앤 드랍 Interface
+interface Draggable {
+  dragStartHandler(event: DragEvent): void;
+
+  dragEndHandler(event: DragEvent): void;
+} 
+
+interface DragTarget {
+  dragOverHandler(event: DragEvent): void;
+  dropHandler(event: DragEvent): void;
+  dragLeaveHandler(event: DragEvent): void;
+}
+
+
 // 프로젝트 타입
   enum ProjectStatus { Active, Finished }
 
@@ -144,7 +158,7 @@ abstract class Component<T extends HTMLElement, U extends HTMLElement> {
 
 
 //ProjectItem Class
-class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
+class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements Draggable { //변경됨
   private project: Project;
 
   get 인원() {
@@ -163,9 +177,19 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
     this.renderContent();
   };
 
+  @자동바인드
+  dragStartHandler(event: DragEvent) { 
+    console.log(event, '드래그 시작');
+  };
+
+  dragEndHandler(_: DragEvent) { 
+    console.log('드래그 끝');
+  };
+
   configure() {
-      
-  }
+      this.element.addEventListener('dragstart', this.dragStartHandler)  
+      this.element.addEventListener('dragend', this.dragEndHandler)  
+  };
 
   renderContent() {
       this.element.querySelector('h2')!.textContent = this.project.title;
