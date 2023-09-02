@@ -10,3 +10,6 @@
 [클래스와 사용자 정의타입 추가](https://blog.naver.com/ares132/223199113910)  
 [열거형으로 필터링 하기](https://blog.naver.com/ares132/223199136106)  
 [제네릭 추가, 클래스 상속](https://blog.naver.com/ares132/223200074273)  
+
+
+[항목들을 렌더링 하는 클래스 추가 및 적용](https://blog.naver.com/ares132/223200706303)  

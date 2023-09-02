@@ -16,7 +16,7 @@ class Project {
 // 프로젝트 상태 관리 Management
  type Listener<T> = (items: T[]) => void;
 
- class State<T> { //추가됨
+ class State<T> {
   protected listeners: Listener<T>[] = [];
 
   addListener(listenerFn: Listener<T>) {
@@ -106,7 +106,7 @@ function 자동바인드(_: any, _2: string, descriptor: PropertyDescriptor) {
   return 조정된Dec;
 }
 
-// Component Base Class  추가됨
+// Component Base Class  
 abstract class Component<T extends HTMLElement, U extends HTMLElement> {
   templateElement: HTMLTemplateElement;
   hostElement: T;
@@ -141,6 +141,28 @@ abstract class Component<T extends HTMLElement, U extends HTMLElement> {
   abstract configure(): void;
   abstract renderContent(): void;
 }
+
+class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
+  private project: Project;
+
+  constructor(hostId: string, project: Project) {
+    super('single-project', hostId, false, project.id);
+    this.project = project
+
+    this.configure();
+    this.renderContent();
+  };
+
+  configure() {
+      
+  }
+
+  renderContent() {
+      this.element.querySelector('h2')!.textContent = this.project.title;
+      this.element.querySelector('h3')!.textContent = this.project.people.toString();
+      this.element.querySelector('p')!.textContent = this.project.description;
+  }
+} 
 
 
 // ProjectList Class
@@ -177,9 +199,10 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
     const listEl = document.getElementById(`${this.type}-projects-list`)! as HTMLUListElement;
     listEl.innerHTML = '';
     for (const prjItem of this.assignedProjects) {
-      const listItem = document.createElement('li');
-      listItem.textContent = prjItem.title;
-      listEl?.appendChild(listItem);
+      // const listItem = document.createElement('li');
+      // listItem.textContent = prjItem.title;
+      // listEl?.appendChild(listItem);
+      new ProjectItem(this.element.querySelector('ul')!.id, prjItem)
     }
   }
 
