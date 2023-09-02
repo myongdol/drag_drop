@@ -13,3 +13,4 @@
 
 
 [항목들을 렌더링 하는 클래스 추가 및 적용](https://blog.naver.com/ares132/223200706303)  
+[getter 추가 및 적용](https://blog.naver.com/ares132/223200721802)  
