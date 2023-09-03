@@ -15,3 +15,4 @@
 [항목들을 렌더링 하는 클래스 추가 및 적용](https://blog.naver.com/ares132/223200706303)  
 [getter 추가 및 적용](https://blog.naver.com/ares132/223200721802)  
 [드래그 앤 드롭 구현을 위한 인터페이스 생성하고 활용하기](https://blog.naver.com/ares132/223200759661)  
+[드래그 이벤트 및 UI의 현재 상태 반영하기](https://blog.naver.com/ares132/223201406985)

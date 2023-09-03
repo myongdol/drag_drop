@@ -158,7 +158,7 @@ abstract class Component<T extends HTMLElement, U extends HTMLElement> {
 
 
 //ProjectItem Class
-class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements Draggable { //변경됨
+class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements Draggable {
   private project: Project;
 
   get 인원() {
@@ -200,7 +200,7 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements 
 
 
 // ProjectList Class
-class ProjectList extends Component<HTMLDivElement, HTMLElement> { 
+class ProjectList extends Component<HTMLDivElement, HTMLElement> implements DragTarget {
   assignedProjects: Project[];
 
   constructor(private type: 'active'|'finished') {
@@ -210,7 +210,27 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
     this.renderContent();
   }
 
+  @자동바인드
+  dragOverHandler(_: DragEvent): void { 
+    const listEl = this.element.querySelector('ul')!;
+    listEl.classList.add('droppable')
+  }
+
+  dropHandler(_: DragEvent): void {  
+      
+  }
+
+  @자동바인드
+  dragLeaveHandler(_: DragEvent): void {
+    const listEl = this.element.querySelector('ul')!;
+    listEl.classList.remove('droppable')  
+  }
+
   configure() {
+    this.element.addEventListener('dragover', this.dragOverHandler);
+    this.element.addEventListener('dragleave', this.dragLeaveHandler);
+    this.element.addEventListener('drop', this.dropHandler);
+
     projectState.addListener((projects: Project[]) => {
       const releavantProjects = projects.filter(prj => {
         if(this.type === 'active') {
