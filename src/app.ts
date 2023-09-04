@@ -1,31 +1,7 @@
-// 드래그 앤 드랍 Interface
-interface Draggable {
-  dragStartHandler(event: DragEvent): void;
-
-  dragEndHandler(event: DragEvent): void;
-} 
-
-interface DragTarget {
-  dragOverHandler(event: DragEvent): void;
-  dropHandler(event: DragEvent): void;
-  dragLeaveHandler(event: DragEvent): void;
-}
-
-
-// 프로젝트 타입
-  enum ProjectStatus { Active, Finished }
-
-class Project {
-  constructor(
-    public id: string,
-    public title: string,
-    public description: string,
-    public people: number,
-    public status: ProjectStatus
-  ) {
-
-  }
-}
+/// <reference path="DD-interfaces.ts" />
+/// <reference path="project-model.ts" />
+ 
+namespace App {
 
 // 프로젝트 상태 관리 Management
  type Listener<T> = (items: T[]) => void;
@@ -359,6 +335,7 @@ class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
 
 }
 
-const prjInput = new ProjectInput();
-const activeProject = new ProjectList('active');
-const finishedProject = new ProjectList('finished');
+ new ProjectInput();
+ new ProjectList('active');
+ new ProjectList('finished');
+}
