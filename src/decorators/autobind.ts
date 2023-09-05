@@ -1,4 +1,3 @@
-namespace App {
     // 자동 bind 데코레이터
     export function 자동바인드(_: any, _2: string, descriptor: PropertyDescriptor) {
     
@@ -12,4 +11,3 @@ namespace App {
         }
         return 조정된Dec;
     }
-}

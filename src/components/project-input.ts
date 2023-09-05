@@ -1,5 +1,7 @@
-
-
+import { Component } from "./base-components.js";
+import { Validatable, validate } from "../util/validation.js";
+import { 자동바인드 } from "../decorators/autobind.js"
+import { projectState } from "../state/project-states.js";
 
     // ProjectInput Class
     export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> { 
