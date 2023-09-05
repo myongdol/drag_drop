@@ -1,4 +1,4 @@
-namespace App {
+
     // 프로젝트 상태 관리 Management
  type Listener<T> = (items: T[]) => void;
 
@@ -56,4 +56,3 @@ namespace App {
 
  export const projectState = ProjectState.getInstance();
 
-}

@@ -2,7 +2,7 @@
 /// <reference path="../decorators/autobind.ts"/>
 /// <reference path="../models/project.ts"/>
 /// <reference path="../models/drag-drop.ts"/>
-
+import from '../models/drag-drop.js';
 
 namespace App {
     //ProjectItem Class

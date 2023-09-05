@@ -1,4 +1,3 @@
-namespace App {
     
 // 검증기능 (Validation) 
     export interface Validatable {
@@ -31,5 +30,3 @@ namespace App {
     
         return isValid;
     }
-    
-}
