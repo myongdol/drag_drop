@@ -1,10 +1,10 @@
-import { Component } from "./base-components.js";
-import { Validatable, validate } from "../util/validation.js";
+import 컴포넌트 from "./base-components.js";
+import * as Validation from "../util/validation.js";
 import { 자동바인드 } from "../decorators/autobind.js"
 import { projectState } from "../state/project-states.js";
 
     // ProjectInput Class
-    export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> { 
+    export class ProjectInput extends 컴포넌트<HTMLDivElement, HTMLFormElement> { 
         titleInputElement: HTMLInputElement;
         descriptionInputElement: HTMLInputElement;
         peopleInputElement: HTMLInputElement;
@@ -30,16 +30,16 @@ import { projectState } from "../state/project-states.js";
         const enteredDescription = this.descriptionInputElement.value;
         const enteredPeople = this.peopleInputElement.value;
     
-        const titleValidatable: Validatable = {
+        const titleValidatable: Validation.Validatable = {
             value: enteredTitle,
             required: true
         };
-        const descriptionValidatable: Validatable = {
+        const descriptionValidatable: Validation.Validatable = {
             value: enteredDescription,
             required: true,
             minLength: 5
         };
-        const peopleValidatable: Validatable = {
+        const peopleValidatable: Validation.Validatable = {
             value: +enteredPeople,
             required: true,
             min: 1,
@@ -50,9 +50,9 @@ import { projectState } from "../state/project-states.js";
             // validate({value: enteredTitle, required: true, minLength: 5}) &&
             // validate({value: enteredDescription, required: true, minLength: 5}) &&
             // validate({value: enteredTitle, required: true, minLength: 5})
-            !validate(titleValidatable) ||
-            !validate(descriptionValidatable) ||
-            !validate(peopleValidatable)
+            !Validation.validate(titleValidatable) ||
+            !Validation.validate(descriptionValidatable) ||
+            !Validation.validate(peopleValidatable)
         ) {
             alert('잘못된 입력 입니다. 다시 시도 해주세요.')
         } else {

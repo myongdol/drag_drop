@@ -1,11 +1,11 @@
 import {Draggable} from '../models/drag-drop.js';
-import { Component } from './base-components.js';
+import 컴포넌트 from './base-components.js';
 import { Project } from "../models/project.js";
 import {자동바인드} from "../decorators/autobind.js"
 
 
     //ProjectItem Class
- export class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements Draggable {
+ export class ProjectItem extends 컴포넌트<HTMLUListElement, HTMLLIElement> implements Draggable {
     private project: Project;
   
     get 인원() {
