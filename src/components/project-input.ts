@@ -1,7 +1,7 @@
-import 컴포넌트 from "./base-components.js";
-import * as Validation from "../util/validation.js";
-import { 자동바인드 } from "../decorators/autobind.js"
-import { projectState } from "../state/project-states.js";
+import 컴포넌트 from "./base-components";
+import * as Validation from "../util/validation";
+import { 자동바인드 } from "../decorators/autobind"
+import { projectState } from "../state/project-states";
 
     // ProjectInput Class
     export class ProjectInput extends 컴포넌트<HTMLDivElement, HTMLFormElement> { 

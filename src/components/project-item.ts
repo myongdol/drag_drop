@@ -1,7 +1,7 @@
-import {Draggable} from '../models/drag-drop.js';
-import 컴포넌트 from './base-components.js';
-import { Project } from "../models/project.js";
-import {자동바인드} from "../decorators/autobind.js"
+import {Draggable} from '../models/drag-drop';
+import 컴포넌트 from './base-components';
+import { Project } from "../models/project";
+import {자동바인드} from "../decorators/autobind"
 
 
     //ProjectItem Class

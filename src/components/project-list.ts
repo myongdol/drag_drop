@@ -1,9 +1,9 @@
-import {DragTarget} from '../models/drag-drop.js';
-import 컴포넌트 from './base-components.js';
-import { Project, ProjectStatus } from "../models/project.js";
-import {자동바인드} from "../decorators/autobind.js"
-import { projectState } from '../state/project-states.js';
-import { ProjectItem } from './project-item.js';
+import {DragTarget} from '../models/drag-drop';
+import 컴포넌트 from './base-components';
+import { Project, ProjectStatus } from "../models/project";
+import {자동바인드} from "../decorators/autobind"
+import { projectState } from '../state/project-states';
+import { ProjectItem } from './project-item';
 
     // ProjectList Class
  export class ProjectList extends 컴포넌트<HTMLDivElement, HTMLElement> implements DragTarget {
